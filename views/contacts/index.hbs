@@ -1,0 +1,42 @@
+<div class="container">
+  <h1>Address Book Index Page </h1>
+  <a href="/contacts/new">Add a New Contact </a>
+  <hr>
+  {{#each contacts}}
+  <div class="row">
+    <div class="col-md-2">
+      <img src=" {{ this.poster_url }}"
+        alt = "{{ this.poster_url }}"
+        class="poster">
+    </div>
+    <div class="col-md-6">
+      <h2>
+        <a href="/contacts/{{ this.id }}">{{ this.first_name}} {{this.last_name}}</a>
+      </h2>
+        <p>Phone Number: {{ this.phone_number }} </p>
+        <p>Email Address: {{ this.email_address }} </p>
+        <p>Line 1 : {{ this.line_1 }} </p>
+        <p>LIne 2 : {{ this.line_2 }} </p>
+        <p>City   : {{ this.city   }} </p>
+        <p>Zip    : {{ this.zip    }} </p>
+        <p>
+          <form action="/contacts/{{ this.id }}?_method=DELETE" method="POST">
+            <input
+              class="btn btn-sm btn-danger"
+              type="submit"
+              name="delete"
+              value="Delete Movie">
+            </form>
+            <br>
+          <form action="/contacts/{{ this.id }}/edit" method="GET">
+            <input
+              class="btn btn-sm btn-danger"
+              type="submit"
+              name="edit"
+              value="Edit Movie">
+          </form>
+          </p>
+        </div>
+      </div>
+      {{/each}}
+    </div>

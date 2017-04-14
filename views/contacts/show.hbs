@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>{{ contact.first_name}} {{contact.last_name }}</h1>
+  <a href="/contacts">Go to Address Book</a>
+  <hr>
+  <div class="row">
+    <div class="col-md-2">
+      <img src=" {{ contact.poster_url }}"
+        alt = "{{ contact.poster_url }}"
+        class="poster">
+    </div>
+    <div class="col-md-6">
+        <p>Phone Number: {{ contact.phone_number }} </p>
+        <p>Email Address: {{ contact.email_address }} </p>
+        <p>Line 1 : {{ contact.line_1 }} </p>
+        <p>LIne 2 : {{ contact.line_2 }} </p>
+        <p>City   : {{ contact.city   }} </p>
+        <p>Zip    : {{ contact.zip    }} </p>
+      </div>
+    </div>
